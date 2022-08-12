@@ -11,9 +11,7 @@ data class Company (
     var employee: List<EmployeeEntity>,
 
 
-    ) : CompanyEntity(){
-    constructor() : this(emptyList(), emptyList())
-    }
+    ) : CompanyEntity()
 
 
 @Entity(tableName = "company_table")
@@ -62,14 +60,6 @@ data class Salary(@PrimaryKey val id: String,
 
 
 //Relational Branch Entity
-//@Entity(
-//    tableName = "branch", foreignKeys = [
-//        ForeignKey(
-//        entity = CompanyEntity::class,
-//        parentColumns = ["id"],
-//        childColumns = ["parentId"], onDelete = CASCADE)
-//    ]
-//)
 @Entity(tableName = "branch")
 class BranchEntity(@PrimaryKey val id: String,
                    var parentId: String,
@@ -78,14 +68,6 @@ class BranchEntity(@PrimaryKey val id: String,
 )
 
 //Relational Employee Entity
-//@Entity(
-//    tableName = "employee", foreignKeys = [
-//        ForeignKey(
-//            entity = CompanyEntity::class,
-//            parentColumns = ["id"],
-//            childColumns = ["parentId"], onDelete = CASCADE)
-//    ]
-//)
 @Entity(tableName = "employee")
 class EmployeeEntity(@PrimaryKey val id: String,
                      var parentId: String,

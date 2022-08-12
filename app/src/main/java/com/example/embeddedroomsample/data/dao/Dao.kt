@@ -11,7 +11,6 @@ import com.example.embeddedroomsample.data.EmployeeEntity
 interface CompanyDao {
 
     @Query("SELECT * FROM company_table")
-    //@Query("SELECT * FROM employee,salary,logo  join company_table on  company_table.id = employee.parentId ")
     suspend fun getAllCompanies() : List<Company>
 
     //Hidden from external classes
